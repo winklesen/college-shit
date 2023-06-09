@@ -9,7 +9,7 @@
 
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
-    color: #fff;
+    color: #d3d3d3;
     text-decoration: none;
 }
 
@@ -30,7 +30,7 @@
 
 .navbar.active .nav-link:hover,
 .navbar.active .nav-link:focus {
-    color: #555;
+    color: #000;
     text-decoration: none;
 }
 
@@ -53,13 +53,13 @@
 
 /* CUSTOM CSS START */
 .banner{
-    background-image: url(asset/banner-home-gradient.jpg);
+    background-image: url(asset/banner-home-2-1.jpg);
     background-size: cover;
     min-height: 48rem;
 }
 .text-banner{
     position: absolute;
-    top: 37%;
+    top: 30%;
     float: left;
 }
 .text-banner-carousel{
