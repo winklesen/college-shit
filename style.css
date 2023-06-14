@@ -1,0 +1,77 @@
+/* NAV TRANPARENT START */
+.navbar {
+    transition: all 0.4s;
+}
+
+.navbar .nav-link {
+    color: #fff;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #d3d3d3;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+}
+
+
+/* Change navbar styling on scroll */
+.navbar.active {
+    background: #fff;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+    color: #555;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: #555;
+}
+
+/* NAV TRANPARENT END */
+
+/* CUSTOM CSS START */
+.banner{
+    background-image: url(asset/banner-home-2-1.jpg);
+    background-size: cover;
+    min-height: 50rem;
+}
+.text-banner-carousel{
+    position: absolute;
+    top: 44%;
+    left: -24%;
+    width: 100%;
+}
+.text-small {
+    font-size: 0.9rem !important;
+}
+.text-banner{
+    position: absolute;
+    top: 30%;
+}
+/* CUSTOM CSS END */
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #fff;
+    }
+
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: #555;
+    }
+
+    .text-banner{
+        top: 20%;
+    }
+}
