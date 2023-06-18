@@ -1,65 +1,118 @@
+<!-- 
+  Kelompok 4
+  Anggota : 
+  - Samuel Bernard Jeffersen
+  - Toric
+  - Padil
+  - Kemas
+  - Beni  
+
+
+  Structure
+  - Navbar
+  - Header
+  - About Product
+  - 3 Main Features
+  - Pricing
+  - Testiomnial
+  - Our Client
+  - Our Team
+  - Contact Us
+  - Maps
+  - Footer
+ -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <!-- Bootsrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">    
+
+    <!-- Google Font -->    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Work+Sans&family=Inter&family=Poppins&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/styles/style.css">    
+        
     <title>ECASHIER | The Easiest Transaction</title>
+
+    <link href="https://fonts.googleapis.com/css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="assets/styles/css-open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="assets/styles/css-animate.css">
+    <link rel="stylesheet" href="assets/styles/css-owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/styles/css-owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/styles/css-magnific-popup.css">
+    <link rel="stylesheet" href="assets/styles/css-aos.css">
+    <link rel="stylesheet" href="assets/styles/css-ionicons.min.css">
+    <link rel="stylesheet" href="assets/styles/css-bootstrap-datepicker.css">
+    <link rel="stylesheet" href="assets/styles/css-jquery.timepicker.css">
+    <link rel="stylesheet" href="assets/styles/css-flaticon.css">
+    <link rel="stylesheet" href="assets/styles/css-icomoon.css">
+    <link rel="stylesheet" href="assets/styles/css-style.css"> -->
 </head>
 
 <body>
-    <!-- Navbar-->
-    <header class="header">
-        <nav class="navbar navbar-expand-lg fixed-top py-3">
-            <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold">ECASHIER</a>
-                <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                    class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
 
-                <div id="navbarSupportedContent" class="collapse navbar-collapse">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active"><a href="#"
-                                class="nav-link"><b>Home</b></a></li>
-                        <li class="nav-item"><a href="#" class="nav-link"><b>Product</b></a>
-                        </li>
-                        <li class="nav-item"><a href="#" class="nav-link"><b>Features</b></a>
-                        </li>
-                        <li class="nav-item"><a href="#" class="nav-link"><b>Pricing</b></a>
-                        </li>
-                        <li class="nav-item"><a href="#" class="nav-link"><b>Client</b></a>
-                        </li>
-                        <li class="nav-item"><a href="#" class="nav-link"><b>Team</b></a>
-                        </li>
-                        <li class="nav-item"><a href="#" class="nav-link"><b>Contact Us</b></a>
-                        </li>
-                    </ul>
-                </div>
+  <!-- HEADER START -->
+  <header class="header">
+    <!-- NAVBAR START -->
+      <nav class="navbar navbar-expand-lg fixed-top py-3">
+          <div class="container">
+            <!-- Logo -->
+            <a href="#" class="navbar-brand text-uppercase font-weight-bold">ECASHIER</a>
+            <!-- Expand Button -->
+            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler navbar-toggler-right">
+                <i class="fa fa-bars"></i>
+            </button>
+            <!-- Link -->
+            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a href="#"
+                        class="nav-link"><b>Home</b></a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><b>Product</b></a>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link"><b>Features</b></a>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link"><b>Pricing</b></a>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link"><b>Client</b></a>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link"><b>Team</b></a>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link"><b>Contact Us</b></a>
+                </li>
+              </ul>
             </div>
-        </nav>
-    </header>
-
-
-    <div class="p-5 text-white banner">
-        <div class="container">
-            <div class="text-banner">
-                <p style="font-weight: bold; font-size: 3rem;">Transaksi Lebih Mudah<br>
-                    Pengarsipan Tersusun Rapih<br>Bisnis Makin Lancar</p>
-                <p>Memperkenalkan Ecashier Ultra & Ultra+.<br>
-                    Perangkat kasir paling mutakhir untuk kenyamanan<br>dan kemudahan operasi bisnis.</p>
-                    <button type="button" class="btn btn-outline-light">Coba Gratis</button>
-            </div>
+          </div>
+      </nav>
+      <!-- NAVBAR END -->
+  
+    <!-- Banner -->
+    <div class="banner text-white ">
+      <div class="container">
+        <div class="text-banner">
+            <p style="font-weight: bold; font-size: 3rem;">Transaksi Lebih Mudah<br>
+                Pengarsipan Tersusun Rapih<br>Bisnis Makin Lancar</p>
+            <p>Memperkenalkan Ecashier Ultra & Ultra+.<br>
+                Perangkat kasir paling mutakhir untuk kenyamanan<br>dan kemudahan operasi bisnis.</p>
+                
+            <button type="button" class="btn btn-outline-light">Coba Gratis</button>
         </div>
+      </div>
     </div>
+    
 
+    <!-- UNUSED -->
     <!-- <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -94,98 +147,174 @@
         </button> 
       </div>
     <div> -->
-        
-    </div>
-
-     <!-- Start Contact Section -->
-  <section class="cs-gradient_bg_1" id="contact">
-    <div class="cs-height_95 cs-height_lg_70"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-5 col-lg-8">
-          <div class="cs-seciton_heading cs-style1">
-            <div class="cs-height_10 cs-height_lg_10"></div>
-            <h3 class="cs-section_title" style="color:#38A2F7">Contact Us Now!</h3>
+  </header>
+  <!-- HEADER END -->
+    
+  <main>
+    <!-- ABOUT START -->
+    <section id="about">
+      <div class="container py-5 fill bg-dark">
+        <div class="row justify-content-center">
+          <div class="col">
+            <p>About</p>
           </div>
-          <p style="margin-bottom:10px;">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias numquam eius totam! Saepe, libero. Quae
-            consequuntur dignissimos dolorem sint velit error saepe laborum, non tempore.
-          </p>
-          <div class="cs-height_15 cs-height_lg_15"></div>
-          <div class="cs-iconbox cs-style3">
-            <div class="cs-iconbox_icon">
-              <i class="fa fa-map"></i>
-            </div>
-            <div class="cs-iconbox_right">
-              <h2 class="cs-iconbox_title">Address</h2>
-              <div class="cs-iconbox_subtitle">Jl. Margonda No.8, Pondok Cina, Kecamatan Beji, Kota Depok, Jawa Barat 16424</div>
-            </div>
-          </div>
-          <div class="cs-height_30 cs-height_lg_30"></div>
-          <div class="cs-iconbox cs-style3">
-            <div class="cs-iconbox_icon">
-              <i class="fa fa-address-book"></i>
-            </div>
-            <div class="cs-iconbox_right">
-              <h2 class="cs-iconbox_title">Contract Number</h2>
-              <div class="cs-iconbox_subtitle">+62 888-8888-8888</div>
-            </div>
-          </div>
-          <div class="cs-height_30 cs-height_lg_30"></div>
-          <div class="cs-iconbox cs-style3">
-            <div class="cs-iconbox_icon">
-              <i class="fa fa-envelope"></i>
-            </div>
-            <div class="cs-iconbox_right">
-              <h2 class="cs-iconbox_title">Email Address</h2>
-              <div class="cs-iconbox_subtitle">sales@email.com</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-6 offset-xl-1">
-          <div class="cs-height_40 cs-height_lg_40"></div>
-          <form class="cs-contact_form">
-            <h2 class="cs-contact_form_title">Please fill up the form</h2>
-            <div class="row">
-              <div class="col-lg-6">
-                <input type="text" class="cs-form_field" placeholder="Name">
-                <div class="cs-height_25 cs-height_lg_25"></div>
-              </div>
-              <div class="col-lg-6">
-                <input type="text" class="cs-form_field" placeholder="Email address">
-                <div class="cs-height_25 cs-height_lg_25"></div>
-              </div>
-              <div class="col-lg-12">
-                <input type="text" class="cs-form_field" placeholder="Phone number">
-                <div class="cs-height_25 cs-height_lg_25"></div>
-              </div>
-              <div class="col-lg-12">
-                <textarea cols="30" rows="5" class="cs-form_field" placeholder="Write your massage"></textarea>
-                <div class="cs-height_25 cs-height_lg_25"></div>
-              </div>
-              <div class="col-lg-12">
-                <button class="cs-btn cs-size_md" style="float:right;"><span>Send Message</span></button>
-              </div>
-            </div>
-          </form>
         </div>
       </div>
-    </div>
-    <div class="cs-height_95 cs-height_lg_70"></div>
-  </section>
-  <!-- End Contact Section -->
+    </section>
+    <!-- ABOUT END -->
 
-  <!-- Maps for Location -->
-  <div id="map">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.282336434867!2d106.82965127515274!3d-6.357489093632487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec3c53dfed75%3A0xad5f6ba586fc5d5e!2sCampus%20D2%20Of%20BSI%20Margonda%20Depok!5e0!3m2!1sen!2sid!4v1686304151140!5m2!1sen!2sid"
-      width="100%" height="350" style="border:0;" allowfullscreen loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
-  <!-- Maps for Location -->
+    <!-- FEATURE START -->
+    <section id="feature">
+      <div class="container py-5 fill bg-danger">
+        <div class="row justify-content-center">
+          <div class="col">
+            <p>Feature</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FEATURE END -->
+    
+    <!-- PRICING START -->
+    <section id="pricing">
+      <div class="container py-5 fill bg-green">
+        <div class="row justify-content-center">
+          <div class="col">
+            <p>PRICING</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- PRICING END -->
+    
+    <!-- TESTIMONIAL START -->
+    <section id="testimonial">
+      <div class="container py-5 fill bg-danger">
+        <div class="row justify-content-center">
+          <div class="col">
+            <p>TESTIMONIAL</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- TESTIMONIAL END -->
+    
+    <!-- OUR-CLIENT START -->
+    <section id="our-client">
+      <div class="container py-5 fill bg-success">
+        <div class="row justify-content-center">
+          <div class="col">
+            <p>OUR-CLIENT</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- OUR-CLIENT END -->
+    
+    <!-- OUR-TEAM START -->
+    <section id="our-team">
+      <div class="container py-5 fill bg-danger">
+        <div class="row justify-content-center">
+          <div class="col">
+            <p>OUR-TEAM</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- OUR-TEAM END -->
+    
+    <!-- CONTACT-US START -->
+    <section id="contact-us" class="cs-gradient_bg_1" >
+      <div class="cs-height_95 cs-height_lg_70"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-5 col-lg-8">
+            <div class="cs-seciton_heading cs-style1">
+              <div class="cs-height_10 cs-height_lg_10"></div>
+              <h3 class="cs-section_title" style="color:#38A2F7">Contact Us Now!</h3>
+            </div>
+            <p style="margin-bottom:10px;">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias numquam eius totam! Saepe, libero. Quae
+              consequuntur dignissimos dolorem sint velit error saepe laborum, non tempore.
+            </p>
+            <div class="cs-height_15 cs-height_lg_15"></div>
+            <div class="cs-iconbox cs-style3">
+              <div class="cs-iconbox_icon">
+                <i class="fa fa-map"></i>
+              </div>
+              <div class="cs-iconbox_right">
+                <h2 class="cs-iconbox_title">Address</h2>
+                <div class="cs-iconbox_subtitle">Jl. Margonda No.8, Pondok Cina, Kecamatan Beji, Kota Depok, Jawa Barat 16424</div>
+              </div>
+            </div>
+            <div class="cs-height_30 cs-height_lg_30"></div>
+            <div class="cs-iconbox cs-style3">
+              <div class="cs-iconbox_icon">
+                <i class="fa fa-address-book"></i>
+              </div>
+              <div class="cs-iconbox_right">
+                <h2 class="cs-iconbox_title">Contract Number</h2>
+                <div class="cs-iconbox_subtitle">+62 888-8888-8888</div>
+              </div>
+            </div>
+            <div class="cs-height_30 cs-height_lg_30"></div>
+            <div class="cs-iconbox cs-style3">
+              <div class="cs-iconbox_icon">
+                <i class="fa fa-envelope"></i>
+              </div>
+              <div class="cs-iconbox_right">
+                <h2 class="cs-iconbox_title">Email Address</h2>
+                <div class="cs-iconbox_subtitle">sales@email.com</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 offset-xl-1">
+            <div class="cs-height_40 cs-height_lg_40"></div>
+            <form class="cs-contact_form">
+              <h2 class="cs-contact_form_title">Please fill up the form</h2>
+              <div class="row">
+                <div class="col-lg-6">
+                  <input type="text" class="cs-form_field" placeholder="Name">
+                  <div class="cs-height_25 cs-height_lg_25"></div>
+                </div>
+                <div class="col-lg-6">
+                  <input type="text" class="cs-form_field" placeholder="Email address">
+                  <div class="cs-height_25 cs-height_lg_25"></div>
+                </div>
+                <div class="col-lg-12">
+                  <input type="text" class="cs-form_field" placeholder="Phone number">
+                  <div class="cs-height_25 cs-height_lg_25"></div>
+                </div>
+                <div class="col-lg-12">
+                  <textarea cols="30" rows="5" class="cs-form_field" placeholder="Write your massage"></textarea>
+                  <div class="cs-height_25 cs-height_lg_25"></div>
+                </div>
+                <div class="col-lg-12">
+                  <button class="cs-btn cs-size_md" style="float:right;"><span>Send Message</span></button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="cs-height_95 cs-height_lg_70"></div>
+    </section>
+    <!-- CONTACT-US END -->
+    
+    <!-- MAPS START -->
+    <section id="maps">
+      <div id="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.282336434867!2d106.82965127515274!3d-6.357489093632487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec3c53dfed75%3A0xad5f6ba586fc5d5e!2sCampus%20D2%20Of%20BSI%20Margonda%20Depok!5e0!3m2!1sen!2sid!4v1686304151140!5m2!1sen!2sid"
+          width="100%" height="350" style="border:0;" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+    <!-- MAPS END -->    
+  </main>
 
-  <!-- Start Footer -->
-  <footer class="cs-footer">
+  <!-- FOOTER START -->  
+  <footer id="footer" class="cs-footer">
     <div class="cs-height_75 cs-height_lg_70"></div>
     <div class="container">
       <div class="row">
@@ -200,7 +329,7 @@
               </p>
             </div>
           </div>
-        </div><!-- .col -->
+        </div>
         <div class="col-lg-3 col-md-6">
           <div class="cs-footer_item widget_nav_menu">
             <h2 class="cs-widget_title">Navigation</h2>
@@ -213,7 +342,7 @@
               <li><a href="#team">Team</a></li>
             </ul>
           </div>
-        </div><!-- .col -->
+        </div>
         <div class="col-lg-3 col-md-6"></div>
         <div class="col-lg-3 col-md-6">
           <div class="cs-footer_item widget_nav_menu">
@@ -227,29 +356,44 @@
               <button class="cs-btn cs-size_md w-100"><span>Subscribe</span></button>
             </form>
           </div>
-        </div><!-- .col -->
+        </div>
       </div>
     </div>
     <div class="cs-height_40 cs-height_lg_30"></div>
     <div class="cs-copyright text-center">
       <div class="container"><b>Copyright &copy; 2023 </b> Compiled by <b>MySQL Team.</b></div>
     </div>
-  </footer>
-  <!-- End Footer -->
+  </footer>  
+  <!-- FOOTER END -->
+  
+    
+  <!-- Bootstrap -->  
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"  >
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js">
+  </script>
+  
+  <script src="assets/scripts/script.js"></script>
+
+
 
     
-
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous">
-    </script>
-    <script src="main.js"></script>
-</body>cd
-
+  <!-- JavaScript -->
+  <!-- <script src="assets/scripts/3124-js-jquery.min.js"></script>    
+  <script src="assets/scripts/1397-js-popper.min.js"></script>
+  <script src="assets/scripts/2866-js-bootstrap.min.js"></script>
+  <script src="assets/scripts/6721-js-jquery.easing.1.3.js"></script>
+  <script src="assets/scripts/6191-js-jquery.waypoints.min.js"></script>
+  <script src="assets/scripts/9238-js-jquery.stellar.min.js"></script>
+  <script src="assets/scripts/2483-js-owl.carousel.min.js"></script>
+  <script src="assets/scripts/9554-js-jquery.magnific-popup.min.js"></script>
+  <script src="assets/scripts/8645-js-aos.js"></script>
+  <script src="assets/scripts/6674-js-jquery.timepicker.min.js"></script>
+  <script src="assets/scripts/813-js-scrollax.min.js"></script>
+  <script src="assets/scripts/2347-js-google-map.js"></script>
+  <script src="assets/scripts/2228-js-main.js"></script> -->
+</body>
 </html>
