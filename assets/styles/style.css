@@ -132,6 +132,10 @@ body{
   text-align:center;
 } */
 
+.bg-blue{
+  background-color: #30A3FF;
+}
+
 #feature{
   color: white;
 }
