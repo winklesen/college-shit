@@ -240,6 +240,35 @@ body{
 /* OUR CLIENT END */
 
 /* OUR TEAM START */
+#our-team{
+  text-align: center;
+}
+.our-team-heading{
+  font-size: 2rem;
+}
+
+.our-team-container{
+  padding-bottom: 5%;
+
+}
+
+.our-team-image img{
+  width: 50%;
+  border-radius: 50%;
+}
+
+.our-team-name{
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-style: 'Open Sans';
+
+}
+.our-team-job{
+  font-size: 1.1rem;
+  font-style: 'Roboto'; 
+}
+/* ////// */
+
 .text-blk {
   margin-top: 0px;
   margin-right: 0px;
