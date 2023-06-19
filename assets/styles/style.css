@@ -165,6 +165,37 @@ body{
 /* PRICING END */
 
 /* TESTIMONIAL START */
+.bg-blue{
+  background-color: #30A3FF;
+}
+
+#testimonial{
+  color: white;
+}
+
+.testimonial-icon{
+  width: 5%;
+}
+
+.testimonial-image img{
+  width: 75%;
+  border-radius: 10%;
+}
+
+.testimonial-title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: 'Open Sans';
+
+}
+.testimonial-subtitle{
+  font-size: 1.25rem;
+  font-style: 'Open Sans';
+}
+.testimonial-content{
+  font-size: 1.25rem;
+  font-style: 'Roboto'; 
+}
 /* TESTIMONIAL END */
 
 /* OUR CLIENT START */
