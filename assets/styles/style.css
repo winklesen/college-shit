@@ -11,8 +11,8 @@ body{
 
 .fill{
   /* min-height: 100%; */
-  /* height: 100%; */
-  height: 95vh;
+  height: 100%;
+  /* height: 95vh; */
 
 }
 
@@ -96,6 +96,8 @@ body{
 } */
 
 /* HEADER END */
+
+/* ABOUT START */
 .about-heading{
   font-size: 2rem;
 }
@@ -116,18 +118,46 @@ body{
 }
 .about-description{
   font-size: 1.25rem;
-  font-style: 'Roboto';
-
-  
+  font-style: 'Roboto'; 
 }
-/* ABOUT START */
 
 /* ABOUT END */
 
 /* FEATURE START */
+/* .feature-heading{
+  font-size: 2rem; */
+/* } */
+
+/* .feature-container{
+  text-align:center;
+} */
+
+#feature{
+  color: white;
+}
+
+.feature-icon{
+  width: 5%;
+}
+
+.feature-image img{
+  width: 75%;
+}
+
+.feature-title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: 'Open Sans';
+
+}
+.feature-description{
+  font-size: 1.25rem;
+  font-style: 'Roboto'; 
+}
 /* FEATURE END */
 
 /* PRICING START */
+
 /* PRICING END */
 
 /* TESTIMONIAL START */
