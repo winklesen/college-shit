@@ -21,7 +21,31 @@
   - Footer
 -->
 <?php
-  require 'data.php'
+  require 'data.php';
+
+  $conn = mysqli_connect('127.0.0.1','root', 'root','ecashier');
+
+  if(!$conn)
+  {
+    die(mysqli_error());
+  }
+
+  if(isset($_POST['submit']))
+  {
+    $fullname = trim($_POST['fullname']);
+    $email = trim($_POST['email']);
+    $phone = trim($_POST['phone']);
+    $descriptions = trim($_POST['descriptions']);
+    
+    $sql = "insert into vendor_contact (fullname, email, phone, descriptions) values ('".$fullname."', '".$email."', '".$phone."', '".$descriptions."')";
+    $rs = mysqli_query($conn, $sql);
+    $affectedRows = mysqli_affected_rows($conn);
+    
+    if($affectedRows == 1)
+    {
+      $successMsg = "Data Saved!";
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +61,9 @@
 
     <!-- Animate CSS  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>    
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
     <!-- CSS -->
     <link rel="stylesheet" href="assets/styles/style.css">    
@@ -253,7 +280,7 @@
                   d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z" />
               </svg>
             </div>
-            <h6 class="feature-title">Inventory management</h6>
+            <h6 class="feature-title">Inventory Management</h6>
             <p class="feature-description">
               Tidak pernah kehabisan stok
               <ul>
@@ -502,6 +529,24 @@
     </section>
     <!-- OUR-TEAM END -->
 
+    <!-- MAPS START -->
+    <section id="maps" class="cs-gradient_bg_1">
+      <div class="cs-height_40 cs-height_lg_70"></div>
+        <div class="cs-seciton_heading cs-style1">
+          <div class="cs-height_10 cs-height_lg_10"></div>
+          <h3 class="cs-section_title2 text-center">Our Location!</h3>
+          <div class="cs-height_10 cs-height_lg_10"></div>
+        </div>
+        
+      <div id="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.282336434867!2d106.82965127515274!3d-6.357489093632487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec3c53dfed75%3A0xad5f6ba586fc5d5e!2sCampus%20D2%20Of%20BSI%20Margonda%20Depok!5e0!3m2!1sen!2sid!4v1686304151140!5m2!1sen!2sid"
+          width="250%" height="350" style="border:0;" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+    <!-- MAPS END -->
+
     <!-- CONTACT-US START -->
     <section id="contact-us" class="cs-gradient_bg_1">
       <div class="cs-height_95 cs-height_lg_70"></div>
@@ -512,10 +557,6 @@
               <div class="cs-height_10 cs-height_lg_10"></div>
               <h3 class="cs-section_title" style="color:#38A2F7">Contact Us Now!</h3>
             </div>
-            <p style="margin-bottom:10px;">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias numquam eius totam! Saepe, libero. Quae
-              consequuntur dignissimos dolorem sint velit error saepe laborum, non tempore.
-            </p>
             <div class="cs-height_15 cs-height_lg_15"></div>
             <div class="cs-iconbox cs-style3">
               <div class="cs-iconbox_icon">
@@ -550,28 +591,37 @@
           </div>
           <div class="col-xl-6 offset-xl-1">
             <div class="cs-height_40 cs-height_lg_40"></div>
-            <form class="cs-contact_form">
+            <form class="cs-contact_form" method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">
               <h2 class="cs-contact_form_title">Please fill up the form</h2>
               <div class="row">
                 <div class="col-lg-6">
-                  <input type="text" class="cs-form_field" placeholder="Name">
+                  <input type="text" class="cs-form_field" placeholder="Name" name="fullname" id="fullname">
                   <div class="cs-height_25 cs-height_lg_25"></div>
                 </div>
                 <div class="col-lg-6">
-                  <input type="text" class="cs-form_field" placeholder="Email address">
+                  <input type="email" class="cs-form_field" placeholder="Email address" name="email" id="email">
                   <div class="cs-height_25 cs-height_lg_25"></div>
                 </div>
                 <div class="col-lg-12">
-                  <input type="text" class="cs-form_field" placeholder="Phone number">
+                  <input type="number" class="cs-form_field" placeholder="Phone number" name="phone" id="phone">
                   <div class="cs-height_25 cs-height_lg_25"></div>
                 </div>
                 <div class="col-lg-12">
-                  <textarea cols="30" rows="5" class="cs-form_field" placeholder="Write your massage"></textarea>
+                  <textarea cols="30" rows="5" class="cs-form_field" placeholder="Write your message" name="descriptions" id="descriptions"></textarea>
                   <div class="cs-height_25 cs-height_lg_25"></div>
                 </div>
                 <div class="col-lg-12">
-                  <button class="cs-btn cs-size_md" style="float:right;"><span>Send Message</span></button>
+                  <?php 
+                    if(isset($successMsg))
+                    {
+                      echo "<div class='cs-btn-success cs-size_md' style='padding:2%'>";
+                      print_r($successMsg);
+                      echo "</div>";
+                    }
+                  ?>
+                  <input class="cs-btn cs-size_md" style="float:right;padding:2%" type="submit" name="submit" id="submit" value="Send Message" onclick="window.history.back();">
                 </div>
+                
               </div>
             </form>
           </div>
@@ -580,17 +630,6 @@
       <div class="cs-height_95 cs-height_lg_70"></div>
     </section>
     <!-- CONTACT-US END -->
-
-    <!-- MAPS START -->
-    <section id="maps">
-      <div id="map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.282336434867!2d106.82965127515274!3d-6.357489093632487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec3c53dfed75%3A0xad5f6ba586fc5d5e!2sCampus%20D2%20Of%20BSI%20Margonda%20Depok!5e0!3m2!1sen!2sid!4v1686304151140!5m2!1sen!2sid"
-          width="100%" height="350" style="border:0;" allowfullscreen loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </section>
-    <!-- MAPS END -->
   </main>
 
   <!-- FOOTER START -->  
