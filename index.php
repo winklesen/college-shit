@@ -20,21 +20,53 @@
   - Contact Us
   - Footer
 -->
+
+<!-- Testimonial Data -->
 <?php
-  require 'data.php'
+  require 'data.php';
+?>
+
+<!-- Form Proccess -->
+<?php
+  $conn = mysqli_connect('127.0.0.1','root', '','ecashier');
+
+  if(!$conn)
+  {
+    die(mysqli_error());
+  }
+
+  if(isset($_POST['submit']))
+  {
+    $fullname = trim($_POST['fullname']);
+    $email = trim($_POST['email']);
+    $phone = trim($_POST['phone']);
+    $descriptions = trim($_POST['descriptions']);
+    
+    $sql = "insert into vendor_contact (fullname, email, phone, descriptions) values ('".$fullname."', '".$email."', '".$phone."', '".$descriptions."')";
+    $rs = mysqli_query($conn, $sql);
+    $affectedRows = mysqli_affected_rows($conn);
+    
+    if($affectedRows == 1)
+    {
+      $successMsg = "Data Saved!";
+    }
+  }
 ?>
 
 <!DOCTYPE html>
 <html>
-<head>    
+<head>
+    <!-- Web Icon -->
+    <link rel="icon" type="assets/icons/favicon.ico" href="assets/icons/favicon.ico">
+
     <!-- Bootsrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     
     <!-- Google Font -->    
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Work+Sans&family=Inter&family=Poppins&display=swap" rel="stylesheet">
 
-    <!-- Animate CSS  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
     <!-- CSS -->
     <link rel="stylesheet" href="assets/styles/style.css">    
@@ -63,8 +95,8 @@
                         class="nav-link"><b>Home</b></a></li>
                 <li class="nav-item"><a href="#about" class="nav-link"><b>Product</b></a>
                 </li>
-                <li class="nav-item"><a href="#feature" class="nav-link"><b>Features</b></a>
-                </li>
+                <!-- <li class="nav-item"><a href="#feature" class="nav-link"><b>Features</b></a>
+                </li> -->
                 <li class="nav-item"><a href="#pricing" class="nav-link"><b>Pricing</b></a>
                 </li>
                 <li class="nav-item"><a href="#our-client" class="nav-link"><b>Client</b></a>
@@ -131,7 +163,6 @@
   </header>
   <!-- HEADER END -->
 
-
   <!-- NEW SECTION TEMPLATE -->
   <!-- <section id="title">
     <div class="container py-5 fill bg-danger">
@@ -147,26 +178,26 @@
   <main>
     <!-- ABOUT START -->
     <section id="about">
-      <div class="container py-5 fill ">
+      <div class="container py-5 fill">      
         <div class="row justify-content-center mt-5">
           <h4 class="about-heading">Ragam Fitur</h4>
         </div>
-        <div class="row justify-content-between mt-5  ">
-          <div class="col-lg-4 col-md-12 about-container">
+        <div class="row justify-content-between p-5">
+          <div class="col-lg-4 col-sm-12 about-container">
             <div class="about-image">
               <img src="https://www.esb.id/product/esbposlite/images/ilustrator/Online%20offline.webp" alt="">
             </div>
             <h6 class="about-title">Efesiensi Operasional</h6>
             <p class="about-description">Catat dan kelola semua transaksi dari satu aplikasi</p>
           </div>
-          <div class="col-lg-4 col-md-12 about-container">
+          <div class="col-lg-4 col-sm-12 about-container">
             <div class="about-image">
               <img src="https://www.esb.id/product/esbposlite/images/ilustrator/Easy%20to%20use.png" alt="">
             </div>
             <h6 class="about-title">Kelola Bisnis</h6>
             <p class="about-description">Pantau bisnis dan kelola karyawan dari mana saja</p>
           </div>
-          <div class="col-lg-4 col-md-12 about-container">
+          <div class="col-lg-4 col-sm-12 about-container">
             <div class="about-image">
               <img src="https://www.esb.id/product/esbposlite/images/ilustrator/Terintegrasi.webp" alt="">
             </div>
@@ -184,13 +215,13 @@
         <!-- <div class="row justify-content-center mt-5">
           <h4 class="feature-heading">Feature List</h4>
         </div> -->
-        <div class="row justify-content-between d-flex align-items-center p-5">
-          <div class="col-6">
+        <div class="row justify-content-between align-items-center p-5">
+          <div class="col-lg-6 col-md-12">
             <div class="feature-image">
               <img src="https://www.esb.id/product/esbposlite/images/ilustrator/IllustrationESO-ID.webp" alt="">
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-lg-6 col-md-12">
             <div class="feature-icon py-3">
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal"
                 viewBox="0 0 16 16">
@@ -211,8 +242,8 @@
             </p>
           </div>
         </div>
-        <div class="row justify-content-between d-flex align-items-center p-5">
-          <div class="col-6">
+        <div class="row justify-content-between align-items-center p-5">
+          <div class="col-lg-6 col-md-12">
             <div class="feature-icon py-3">
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
                 <path
@@ -231,19 +262,19 @@
               </ul>
             </p>
           </div>
-          <div class="col-6">
+          <div class="col-lg-6 col-md-12">
             <div class="feature-image">
               <img src="https://www.esb.id/product/esbposlite/images/ilustrator/IllustrationESO-ID.webp" alt="">
             </div>
           </div>
         </div>
-        <div class="row justify-content-between d-flex align-items-center p-5">
-          <div class="col-6">
+        <div class="row justify-content-between align-items-center p-5">
+          <div class="col-lg-6 col-md-12">
             <div class="feature-image">
               <img src="https://www.esb.id/product/esbposlite/images/ilustrator/IllustrationESO-ID.webp" alt="">
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-lg-6 col-md-12">
             <div class="feature-icon py-3">
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pc-display-horizontal"
                 viewBox="0 0 16 16">
@@ -251,14 +282,13 @@
                   d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z" />
               </svg>
             </div>
-            <h6 class="feature-title">Inventory management</h6>
+            <h6 class="feature-title">Inventory Management</h6>
             <p class="feature-description">
-              Tidak pernah kehabisan stok
-              <ul>
-                <li>Track stock levels in real time</li>
-                <li>Send orders to suppliers and track stock receipts</li>
-                <li>Transfer stock between your stores</li>
-                <li>Print barcode labels</li>
+              Lacak total stok secara waktu nyata
+              <ul>                
+                <li>Kirim pesanan ke pemasok dan lacak tanda terima stok</li>
+                <li>Transfer stok antar toko Anda</li>
+                <li>Cetak label kode batang</li>
               </ul>
             </p>
           </div>
@@ -270,81 +300,46 @@
     <!-- PRICING START -->
     <section id="pricing">      
       <div class="container py-5 fill ">                
-        <div class="row justify-content-center mb-5 pb-3">
+        <div class="row justify-content-center pt-5">
           <div class="col-md-7 text-center">
             <h2 class="mb-4">Our Best Pricing</h2>
           </div>
         </div>
-        <div class="row d-flex">
-          <div class="col-lg-3 col-md-6">
-            <div class="block-7">
-              <div class="text-center">
-                <h2 class="heading">Free</h2>
-                <span class="price"><sup>$</sup> <span class="number">0<small class="per">/mo</small></span>
-                  <span class="excerpt d-block">100% free. Forever</span>
-                  <h3 class="heading-2 mb-3">Enjoy All The Features</h3>
-                  <ul class="pricing-text mb-4">
-                    <li><strong>150 GB</strong> Bandwidth</li>
-                    <li><strong>100 GB</strong> Storage</li>
-                    <li><strong>$1.00 / GB</strong> Overages</li>
-                    <li>All features</li>
-                  </ul>
-                  <a href="#" class="btn btn-primary d-block px-3 py-3 mb-4">Choose Plan</a>
-                </span>
-              </div>
+
+        <div class="row mt-5">
+          <div class="pricing-card-container my-2 shadow-lg  col-lg-4 col-md-6">
+            <div class="pricing-card-top p-3 rounded-top">
+              <h4>Basic</h4>
+              <h3>Rp299.000</h3>
+              <h5>Per outlet/bulan</h5>
+            </div>          
+            <div class="pricing-card-bottom p-3">
+              <h4>Paket yang mendukung operasi bisnis dasar <br><br> </h4>
+              <button type="button" class="btn btn-outline-primary rounded-pill">Jadwalkan Demo</button>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="block-7">
-              <div class="text-center">
-                <h2 class="heading">Startup</h2>
-                <span class="price"><sup>$</sup> <span class="number">19<small class="per">/mo</small></span></span>
-                <span class="excerpt d-block">All features are included</span>
-                <h3 class="heading-2 mb-3">Enjoy All The Features</h3>
-                <ul class="pricing-text mb-4">
-                  <li><strong>450 GB</strong> Bandwidth</li>
-                  <li><strong>400 GB</strong> Storage</li>
-                  <li><strong>$2.00 / GB</strong> Overages</li>
-                  <li>All features</li>
-                </ul>
-                <a href="#" class="btn btn-primary d-block px-3 py-3 mb-4">Choose Plan</a>
-              </div>
+          <div class="pricing-card-container my-2 shadow-lg  col-lg-4 col-md-6">
+            <div class="pricing-card-top-premium p-3 rounded-top">
+              <h4>Pro</h4>
+              <h3>Rp499.000</h3>
+              <h5>Per outlet/bulan</h5>
+            </div>          
+            <div class="pricing-card-bottom p-3">
+              <h4>Paket dengan fitur lengkap yang mendukung efisiensi bisnis Anda</h4>
+              <button type="button" class="btn btn-outline-primary rounded-pill">Jadwalkan Demo</button>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="block-7">
-              <div class="text-center">
-                <h2 class="heading">Premium</h2>
-                <span class="price"><sup>$</sup> <span class="number">49<small class="per">/mo</small></span></span>
-                <span class="excerpt d-block">All features are included</span>
-                <h3 class="heading-2 mb-3">Enjoy All The Features</h3>
-                <ul class="pricing-text mb-4">
-                  <li><strong>250 GB</strong> Bandwidth</li>
-                  <li><strong>200 GB</strong> Storage</li>
-                  <li><strong>$5.00 / GB</strong> Overages</li>
-                  <li>All features</li>
-                </ul>
-                <a href="#" class="btn btn-primary d-block px-3 py-3 mb-4">Choose Plan</a>
-              </div>
+          <div class="pricing-card-container my-2 shadow-lg  col-lg-4 col-md-6">
+            <div class="pricing-card-top p-3 rounded-top">
+              <h4>Enterprise</h4>
+              <h3>Rp799.000</h3>
+              <h5>Per outlet/bulan</h5>
+            </div>          
+            <div class="pricing-card-bottom p-3">
+              <h4>Paket terdepan yang mendukung bisnis Anda ke level yang lebih tinggi</h4>
+              <button type="button" class="btn btn-outline-primary rounded-pill">Jadwalkan Demo</button>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="block-7">
-              <div class="text-center">
-                <h2 class="heading">Pro</h2>
-                <span class="price"><sup>$</sup> <span class="number">99<small class="per">/mo</small></span></span>
-                <span class="excerpt d-block">All features are included</span>
-                <h3 class="heading-2 mb-3">Enjoy All The Features</h3>
-                <ul class="pricing-text mb-4">
-                  <li><strong>450 GB</strong> Bandwidth</li>
-                  <li><strong>400 GB</strong> Storage</li>
-                  <li><strong>$20.00 / GB</strong> Overages</li>
-                  <li>All features</li>
-                </ul>
-                <a href="#" class="btn btn-primary d-block px-3 py-3 mb-4">Choose Plan</a>
-              </div>
-            </div>
-          </div>
+          </div>          
         </div>
       </div>
     </section>
@@ -353,20 +348,20 @@
     <!-- TESTIMONIAL START -->
     <section id="testimonial">
       <div class="container-fluid p-5 fill bg-blue">
-        <div class="row justify-content-center">
+        <div class="row ">
           <div id="testimonial-carousel" class="carousel slide" >
             <div class="carousel-inner">
             <?php
-              foreach ($testimonials as $testimonial){
+              foreach ($list_testimonial as $testimonial){
             ?>
               <div class="carousel-item <?php if ($testimonial['title'] == 'Ibu Sri') echo 'active'; ?>">
-                <div class="row p-5">                    
-                  <div class="col-6">
+                <div class="row p-5 align-items-center">                    
+                  <div class="col-lg-6 col-md-12">
                     <div class="testimonial-image">
                       <img src="<?php echo $testimonial['image'] ?>" alt="">               
                     </div>
                   </div>
-                  <div class="col-5" style="top: 10rem">
+                  <div class="col-lg-5 col-md-12 py-5">
                     <h6 class="testimonial-title"><?php echo $testimonial['title'] ?></h6>
                     <h6 class="testimonial-subtitle"><?php echo $testimonial['subtitle'] ?></h6>
                     <p class="testimonial-content">
@@ -397,14 +392,13 @@
 
     <!-- OUR-CLIENT START -->
     <section id="our-client">
-      <div class="container">
+      <div class="container ">
         <div class="section-header">
-          <h3>Our Clients</h3>
-          <p>Kelompok 4 Web Progamming</p>
+          <h3>Our Clients</h3>          
         </div>
         <div class="row no-gutters clients-wrap clearfix wow fadeInUp"
           style="visibility: visible; animation-name: fadeInUp">
-          <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="col-lg-3 col-md-6 col-xs-12">
             <div class="client-logo">
               <img src="https://akarapi.b-cdn.net/wp-content/uploads/2021/01/Logo-Holland-Bakery-Brand-Milk-PT-Mustika-Citra-Rasa-1200x564.jpg" class="img-fluid" alt="" />
             </div>
@@ -413,7 +407,7 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="col-lg-3 col-md-6 col-xs-12">
             <div class="client-logo">
               <img
                 src="https://www.harvestcakes.com/static/img/TH-LOGO.png"
@@ -424,7 +418,7 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="col-lg-3 col-md-6 col-xs-12">
             <div class="client-logo">
               <img src="https://download.logo.wine/logo/Indofood/Indofood-Logo.wine.png"
                 class="img-fluid" alt="" />
@@ -434,7 +428,7 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="col-lg-3 col-md-6 col-xs-12">
             <div class="client-logo">
               <img src="https://www.matahari.com/media/wysiwyg/LOGO_NEVADA_2.jpg"
                 class="img-fluid" alt="" />
@@ -456,36 +450,35 @@
           <h5 class="our-team-subheading">We work in teams, with various expertise, and with passion. Smart, agile teams that can do and deliver anything. And take your business anywhere.</h5>
         </div>
         <div class="row justify-content-center mt-5 ">
-          <div class="col-4 our-team-container ">
+          <div class="col-lg-4 col-sm-6 our-team-container ">
             <div class="our-team-image mb-3 ">
                <img src="assets/images/brook.jpeg" alt="">               
             </div>
             <h6 class="our-team-name">Beni Rahmat Jaya Nazara</h6>
             <p class="our-team-job">Quality Assurance</p>
-          </div>
-          
-          <div class="col-4 our-team-container">
+          </div>          
+          <div class="col-lg-4 col-sm-6 our-team-container">
             <div class="our-team-image mb-3">
                <img src="assets/images/zoro.jpeg" alt="">               
             </div>
             <h6 class="our-team-name">Rizki Fadilla</h6>
             <p class="our-team-job">Fullstack Developer</p>
           </div>                                    
-          <div class="col-4 our-team-container">
+          <div class="col-lg-4 col-sm-6 our-team-container">
             <div class="our-team-image mb-3">
                <img src="assets/images/chooper.jpeg" alt="">               
             </div>
             <h6 class="our-team-name">Attoric Hikmal Fajar</h6>
             <p class="our-team-job">Network Administrator</p>
           </div>                            
-          <div class="col-4 our-team-container">
+          <div class="col-lg-4 col-sm-6 our-team-container">
             <div class="our-team-image mb-3">
                <img src="assets/images/luffy.jpeg" alt="">               
             </div>
             <h6 class="our-team-name">Samuel Bernard Jeffersen</h6>
             <p class="our-team-job">Android Engineer</p>
           </div>
-          <div class="col-4 our-team-container">
+          <div class="col-lg-4 col-sm-6 our-team-container">
             <div class="our-team-image mb-3">
                <img src="assets/images/usop.jpeg" alt="">               
             </div>
@@ -497,6 +490,24 @@
     </section>
     <!-- OUR-TEAM END -->
 
+    <!-- MAPS START -->
+    <section id="maps" class="cs-gradient_bg_1">
+      <div class="cs-height_40 cs-height_lg_70"></div>
+        <div class="cs-seciton_heading cs-style1">
+          <div class="cs-height_10 cs-height_lg_10"></div>
+          <h3 class="cs-section_title2 text-center">Our Location!</h3>
+          <div class="cs-height_10 cs-height_lg_10"></div>
+        </div>
+        
+      <div id="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.282336434867!2d106.82965127515274!3d-6.357489093632487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec3c53dfed75%3A0xad5f6ba586fc5d5e!2sCampus%20D2%20Of%20BSI%20Margonda%20Depok!5e0!3m2!1sen!2sid!4v1686304151140!5m2!1sen!2sid"
+          width="250%" height="350" style="border:0;" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+    <!-- MAPS END -->
+
     <!-- CONTACT-US START -->
     <section id="contact-us" class="cs-gradient_bg_1">
       <div class="cs-height_95 cs-height_lg_70"></div>
@@ -507,10 +518,6 @@
               <div class="cs-height_10 cs-height_lg_10"></div>
               <h3 class="cs-section_title" style="color:#38A2F7">Contact Us Now!</h3>
             </div>
-            <p style="margin-bottom:10px;">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias numquam eius totam! Saepe, libero. Quae
-              consequuntur dignissimos dolorem sint velit error saepe laborum, non tempore.
-            </p>
             <div class="cs-height_15 cs-height_lg_15"></div>
             <div class="cs-iconbox cs-style3">
               <div class="cs-iconbox_icon">
@@ -545,28 +552,37 @@
           </div>
           <div class="col-xl-6 offset-xl-1">
             <div class="cs-height_40 cs-height_lg_40"></div>
-            <form class="cs-contact_form">
+            <form class="cs-contact_form" method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">
               <h2 class="cs-contact_form_title">Please fill up the form</h2>
               <div class="row">
                 <div class="col-lg-6">
-                  <input type="text" class="cs-form_field" placeholder="Name">
+                  <input type="text" class="cs-form_field" placeholder="Name" name="fullname" id="fullname">
                   <div class="cs-height_25 cs-height_lg_25"></div>
                 </div>
                 <div class="col-lg-6">
-                  <input type="text" class="cs-form_field" placeholder="Email address">
+                  <input type="email" class="cs-form_field" placeholder="Email address" name="email" id="email">
                   <div class="cs-height_25 cs-height_lg_25"></div>
                 </div>
                 <div class="col-lg-12">
-                  <input type="text" class="cs-form_field" placeholder="Phone number">
+                  <input type="number" class="cs-form_field" placeholder="Phone number" name="phone" id="phone">
                   <div class="cs-height_25 cs-height_lg_25"></div>
                 </div>
                 <div class="col-lg-12">
-                  <textarea cols="30" rows="5" class="cs-form_field" placeholder="Write your massage"></textarea>
+                  <textarea cols="30" rows="5" class="cs-form_field" placeholder="Write your message" name="descriptions" id="descriptions"></textarea>
                   <div class="cs-height_25 cs-height_lg_25"></div>
                 </div>
                 <div class="col-lg-12">
-                  <button class="cs-btn cs-size_md" style="float:right;"><span>Send Message</span></button>
+                  <?php 
+                    if(isset($successMsg))
+                    {
+                      echo "<div class='cs-btn-success cs-size_md' style='padding:2%'>";
+                      print_r($successMsg);
+                      echo "</div>";
+                    }
+                  ?>
+                  <input class="cs-btn cs-size_md" style="float:right;padding:2%" type="submit" name="submit" id="submit" value="Send Message" onclick="window.history.back();">
                 </div>
+                
               </div>
             </form>
           </div>
@@ -575,17 +591,6 @@
       <div class="cs-height_95 cs-height_lg_70"></div>
     </section>
     <!-- CONTACT-US END -->
-
-    <!-- MAPS START -->
-    <section id="maps">
-      <div id="map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.282336434867!2d106.82965127515274!3d-6.357489093632487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec3c53dfed75%3A0xad5f6ba586fc5d5e!2sCampus%20D2%20Of%20BSI%20Margonda%20Depok!5e0!3m2!1sen!2sid!4v1686304151140!5m2!1sen!2sid"
-          width="100%" height="350" style="border:0;" allowfullscreen loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </section>
-    <!-- MAPS END -->
   </main>
 
   <!-- FOOTER START -->  
@@ -610,11 +615,10 @@
             <h2 class="cs-widget_title">Navigation</h2>
             <ul class="menu">
               <li><a href="index.html">Home</a></li>
-              <li><a href="#product">Product</a></li>
-              <li><a href="#features">Features</a></li>
+              <li><a href="#about">Product</a></li>              
               <li><a href="#pricing">Pricing</a></li>
-              <li><a href="#client">Client</a></li>
-              <li><a href="#team">Team</a></li>
+              <li><a href="#our-client">Client</a></li>
+              <li><a href="#our-team">Team</a></li>
             </ul>
           </div>
         </div>
@@ -644,10 +648,8 @@
   <!-- JavaScript -->    
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"  ></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>  
   <script src="assets/scripts/script.js"></script>    
-</body>
 
+</body>
 </html>

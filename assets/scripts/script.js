@@ -7,4 +7,3 @@ $(function () {
         }
     });
 });
-new WOW().init();

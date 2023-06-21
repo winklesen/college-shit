@@ -1,5 +1,5 @@
 <?php
-$testimonials = [ // tipe array map, key => value
+$list_testimonial = [ // tipe array map, key => value
     [
         "title" => "Ibu Sri",
         "subtitle" => "Pedagang Minuman",

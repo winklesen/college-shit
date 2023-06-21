@@ -1,25 +1,16 @@
 /* GLOBAL */
-body{
+html body{
 	margin: 0;
-	padding: 0;	
-	
-  /* font-family: 'Open Sans', sans-serif; */
-  font-family: 'Roboto', sans-serif;    
-  /* font-family: 'Work Sans', sans-serif;     */
+	padding: 0;	    
+  font-family: 'Roboto', sans-serif;     
 	scroll-behavior: smooth;
 }
 
-/* 
-  .container{
-  animation: fadeIn;
-  animation-duration: 2s;   
-} */
+
 
 .fill{
   /* min-height: 100%; */
-  height: 100%;
-  /* height: 95vh; */
-
+  min-height: 50rem;    
 }
 
 /* NAVBAR START */
@@ -80,7 +71,7 @@ body{
 
 /* HEADER START */
 .banner{
-  background-image: url(../images/banner-home-2-1.jpg);
+  background-image: url(../images/banner_home.jpg);
   background-size: cover;
   min-height: 50rem;
 }
@@ -158,6 +149,7 @@ body{
   font-size: 1.5rem;
   font-weight: bold;
   font-style: 'Open Sans';
+  color: white;
 
 }
 .feature-description{
@@ -167,6 +159,32 @@ body{
 /* FEATURE END */
 
 /* PRICING START */
+.pricing-card-container{
+ 
+}
+
+.pricing-card-top{
+  background-color: #30A3FF;  
+  font-weight: bold;  
+  
+}
+
+.pricing-card-top-premium{
+  background-color: #2C50B2;  
+  font-weight: bold;    
+}
+
+.pricing-card-top *{
+  color: white;
+}
+
+.pricing-card-top-premium *{
+  color: white;
+}
+
+.pricing-card-bottom{
+  font-weight: bold;
+}
 
 /* PRICING END */
 
@@ -192,11 +210,13 @@ body{
   font-size: 1.5rem;
   font-weight: bold;
   font-style: 'Open Sans';
+  color: white;
 
 }
 .testimonial-subtitle{
   font-size: 1.25rem;
   font-style: 'Open Sans';
+  color: white;
 }
 .testimonial-content{
   font-size: 1.25rem;
@@ -256,9 +276,8 @@ body{
 #our-client img {
   transition: all 0.4s ease-in-out;
 }  
-
-
 /* OUR CLIENT END */
+
 
 /* OUR TEAM START */
 #our-team{
@@ -282,6 +301,15 @@ body{
   border-radius: 50%;
 }
 
+.our-team-heading{
+  font-size: 1.5rem;
+}
+
+.our-team-subheading{
+  font-size: 1rem;
+  font-weight: 100;
+}
+
 .our-team-name{
   font-size: 1.25rem;
   font-weight: bold;
@@ -303,12 +331,6 @@ body{
   text-align: center;
 
 }
-
-/* .background{
- background-image: url(background-team.png);
- background-repeat: no-repeat; 
- background-size: cover;
-} */
 
 .responsive-container-block {
   min-height: 75px;
@@ -338,18 +360,6 @@ body{
   min-height: 75px;
 }
 
-/* .container {
-  max-width: 1380px;
-  margin-top: 80px;
-  margin-right: auto;
-  margin-bottom: 80px;
-  margin-left: auto;
-  padding-top: 0px;
-  padding-right: 30px;
-  padding-bottom: 0px;
-  padding-left: 30px;
-}
- */
 .team-head-text {
   font-size: 48px;
   line-height: 50px;
@@ -369,13 +379,6 @@ body{
   margin-left: 0px;
   font-weight: 700;
 }
-
-/* .position {
-  margin-top: 5px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-} */
 
 .team-card-container {
   width: 263px;
@@ -419,20 +422,6 @@ body{
 /* OUR TEAM END */
 
 /* CONTACT US START */
-/*--------------------------------------------------------------
-  Typography
-  ----------------------------------------------------------------*/
-  /* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
-  body,
-  html {
-    color: #6B6B6B;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.6em;
-    overflow-x: hidden;
-  }
-
   h1,
   h2,
   h3,
@@ -446,49 +435,7 @@ body{
     font-weight: 600;
     line-height: 1.2em;
     font-family: 'Poppins', sans-serif;
-  } */
-
-  /* h1 {
-    font-size: 56px;
   }
-
-  h2 {
-    font-size: 42px;
-  }
-
-  h3 {
-    font-size: 30px;
-  }
-
-  h4 {
-    font-size: 24px;
-  }
-
-  h5 {
-    font-size: 18px;
-  }
-
-  h6 {
-    font-size: 16px;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-    cursor: pointer;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-  }
-
-  a:hover {
-    text-decoration: none;
-    color: #6990FF;
-  }
-
-  b,
-  strong {
-    font-weight: bold;
-  } */
 
 /*--------------------------------------------------------------
   Spacing
@@ -668,6 +615,30 @@ body{
     min-width: 150px;
   }
 
+  .cs-btn-success {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    line-height: 1.6em;
+    overflow: hidden;
+    padding: 0;
+    min-width: 150px;
+  }
+
   .cs-btn:after, .cs-btn:before {
     content: '';
     position: absolute;
@@ -831,12 +802,12 @@ body{
 /* CONTACT US END */
 
 /* MAPS START */
-#map {
+/* #map {
   width: 40%;
   height: 50%;
   margin-left: auto;
   margin-right: auto;
-  }
+  } */
 /* MAPS END */
 
 /* FOOTER START */
@@ -879,6 +850,11 @@ body{
 
 .cs-footer_item {
   margin-bottom: 40px;
+}
+
+.cs-section_title2 {
+  color: #38A2F7;
+  margin-bottom: 2%;
 }
 
 @media screen and (max-width: 1199px) {
